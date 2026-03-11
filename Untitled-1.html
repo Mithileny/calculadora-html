@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Lista de Tarefas</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+margin-top:80px;
+}
+
+input{
+padding:10px;
+width:250px;
+}
+
+button{
+padding:10px;
+margin-left:5px;
+cursor:pointer;
+}
+
+li{
+margin:10px;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Minha Lista de Tarefas</h2>
+
+<input id="tarefa" placeholder="Digite uma tarefa">
+
+<button onclick="adicionar()">Adicionar</button>
+
+<ul id="lista"></ul>
+
+<script>
+
+function adicionar(){
+
+let tarefa = document.getElementById("tarefa").value
+
+let li = document.createElement("li")
+
+li.innerText = tarefa
+
+li.onclick = function(){
+li.style.textDecoration = "line-through"
+}
+
+document.getElementById("lista").appendChild(li)
+
+document.getElementById("tarefa").value = ""
+
+}
+
+</script>
+
+</body>
+
+</html>
